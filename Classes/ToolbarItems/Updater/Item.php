@@ -43,10 +43,8 @@ class Tx_Coreupdate_ToolbarItems_Updater_Item  implements backend_toolbarItem  {
 	}
 	function initSettings() {
 		$this->settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$this->EXTKEY]);
-		if(!is_array($this->settings)) {
-				$this->settings = array(
-					'notificationSound' => 'EXT:coreupdate/Resources/Public/Sounds/Fire_pager-jason-1283464858.mp3'
-			);
+		if(!array_key_exists('notificationSound', $this->settings)) {
+			$this->settings['notificationSound'] = 'EXT:coreupdate/Resources/Public/Sounds/Fire_pager-jason-1283464858.mp3';
 		}
 	}
     /**

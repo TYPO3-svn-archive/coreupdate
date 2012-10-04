@@ -80,7 +80,9 @@ class tx_Coreupdate_Lib_Helper {
 					while(array_key_exists($minorVersion . '.' . $patchVersion, $versionInformation[$this->getMinor(TYPO3_version)]['releases'])) {
 						switch($versionInformation[$this->getMinor(TYPO3_version)]['releases'][$minorVersion . '.' . $patchVersion]['type']) {
 							case 'regular':
-								$systemstate = 'newMinorUpdate';
+								if($systemstate !== 'newSecurityUpdate') {
+									$systemstate = 'newMinorUpdate';
+								}
 							break;
 							case 'security':
 								$systemstate = 'newSecurityUpdate';

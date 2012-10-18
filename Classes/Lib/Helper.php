@@ -32,7 +32,7 @@ class tx_Coreupdate_Lib_Helper {
 
 	function storeInCache($value) {
 		$this->initCache();
-		return $GLOBALS['typo3CacheManager']->getCache('coreupdate_versionStore')->set('coreupdate_versionStore', $value, array(), time()+3600);
+		return $GLOBALS['typo3CacheManager']->getCache('coreupdate_versionStore')->set('coreupdate_versionStore', $value, array(), 3600);
 	}
 	function getFromCache() {
 		$this->initCache();
@@ -77,6 +77,8 @@ class tx_Coreupdate_Lib_Helper {
 				} else {
 					$systemstate  = 'noUpdate';
 					$patchVersion++;
+					t3lib_utility_Debug::debug($versionInformation, 'Report / Version');
+
 					while(array_key_exists($minorVersion . '.' . $patchVersion, $versionInformation[$this->getMinor(TYPO3_version)]['releases'])) {
 						switch($versionInformation[$this->getMinor(TYPO3_version)]['releases'][$minorVersion . '.' . $patchVersion]['type']) {
 							case 'regular':

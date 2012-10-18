@@ -44,7 +44,7 @@ class tx_Coreupdate_Lib_Helper {
 	 */
 	function isUpToDate() {
 		if(false === ($versionInformation = $this->getFromCache())) {
-			$versionInformation = json_decode(t3lib_div::getURL('http://typo3.causal.ch/releases.php'), TRUE);
+			$versionInformation = json_decode(t3lib_div::getURL('http://get.typo3.org/json'), TRUE);
 			if($versionInformation !== NULL) {
 				$this->storeInCache($versionInformation);
 			}

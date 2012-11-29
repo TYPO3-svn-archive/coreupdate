@@ -99,7 +99,7 @@ class Tx_Coreupdate_ToolbarItems_Updater_Item  implements backend_toolbarItem  {
 	 * @return	void
 	 */
 	protected function addCssToBackend() {
-		$this->backendReference->addCssFile('benews', t3lib_extMgm::extRelPath($this->EXTKEY) . 'Resources/Public/Stylesheets/ToolbarItems/Updater.css');
+		$this->backendReference->addCssFile('coreupdate', t3lib_extMgm::extRelPath($this->EXTKEY) . 'Resources/Public/Stylesheets/ToolbarItems/Updater.css');
 	}
 
 	function addLLToBackend() {

@@ -1,3 +1,8 @@
+@linkColor: yellow;
+#test {
+  color: @linkColor
+}
+
 #tx-coreupdate-menu .toolbar-item {
 	padding-left: 8px;
 	padding-right: 7px;

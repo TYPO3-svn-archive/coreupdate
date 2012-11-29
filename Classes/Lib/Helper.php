@@ -77,7 +77,6 @@ class tx_Coreupdate_Lib_Helper {
 				} else {
 					$systemstate  = 'noUpdate';
 					$patchVersion++;
-					t3lib_utility_Debug::debug($versionInformation, 'Report / Version');
 
 					while(array_key_exists($minorVersion . '.' . $patchVersion, $versionInformation[$this->getMinor(TYPO3_version)]['releases'])) {
 						switch($versionInformation[$this->getMinor(TYPO3_version)]['releases'][$minorVersion . '.' . $patchVersion]['type']) {

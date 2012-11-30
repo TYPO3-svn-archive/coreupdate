@@ -20,7 +20,7 @@ if (t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version) < 
 		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['coreupdate_versionStore']['options'] = array();
 	}
 	if (!isset($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['coreupdate_versionStore']['options']['cacheTable'])) {
-		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['coreupdate_versionStore']['options']['cacheTable'] = 'tx_coreupdate_cache';
+		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['coreupdate_versionStore']['options']['cacheTable'] = 'cf_coreupdate_versionstore';
 	}
 	if (!isset($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['coreupdate_versionStore']['options']['tagsTable'])) {
 		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['coreupdate_versionStore']['options']['tagsTable'] = 'tx_coreupdate_cache_tags';
